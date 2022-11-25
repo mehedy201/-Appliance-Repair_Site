@@ -1,0 +1,16 @@
+.website_logo{
+    height: 75px;
+    width: auto;
+    cursor: pointer;
+}
+.menu_text{
+    font-family: 'Krona One', sans-serif;
+    text-decoration: none;
+    margin-left: 20px;
+    color: #0073dd;
+}
+.menu_text_icon{
+    height: 25px;
+    width: auto;
+    margin-right: 4px;
+}
