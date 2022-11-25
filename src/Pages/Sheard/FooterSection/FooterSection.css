@@ -1,0 +1,35 @@
+.footer_logo_style{
+    height: 6rem;
+    width: auto;
+}
+.footer_menu_text{
+    display: block;
+    text-decoration: none;
+    margin: 2px 0;
+}
+.for_font_family{
+    font-family: 'Krona One', sans-serif;
+}
+.socil_icon_footer{
+    height: 30px;
+    width: auto;
+    margin: 0 10px;
+    color: rgb(61, 61, 61);
+    cursor: pointer;
+    transition: all 0.5s;
+}
+.social_icon_footer_hover_dial:hover{
+    color:  #00a71c;
+}
+.social_icon_footer_hover_whatsapp:hover{
+    color:  #25D366;
+}
+.social_icon_footer_hover_email:hover{
+    color:  #D32E35;
+}
+.social_icon_footer_hover_facebook:hover{
+    color:  #4267B2;
+}
+.social_icon_footer_hover_instagram:hover{
+    color:  #D72E7F;
+}

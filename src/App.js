@@ -5,13 +5,14 @@ import Home from './Pages/Home/Home';
 import Services from './Pages/Services/Services';
 import NavigationMenu from './Pages/Sheard/NavigaionMenu/NavigationMenu';
 import 'bootstrap/dist/css/bootstrap.css';
+import FooterSection from './Pages/Sheard/FooterSection/FooterSection';
 
 function App() {
   return (
     <>
     {/* Header ------------Start ---- */}
       <header>
-        <NavigationMenu></NavigationMenu>
+        <NavigationMenu/>
       </header>
     {/* Header ------------End ---- */}
      {/* Routes ------------------------------------------------------------------------------------- Start ----- */}
@@ -23,7 +24,9 @@ function App() {
       </Routes>
      {/* Routes --------------------------------------------------------------------------------------- End ----- */}
      {/* Footer ----------- Start ----- */}
-     
+     <footer className='bg-light py-4'>
+       <FooterSection/>
+     </footer>
      {/* Footer ----------- End ----- */}
     </>
   );
