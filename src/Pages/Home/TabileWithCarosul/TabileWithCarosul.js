@@ -3,7 +3,7 @@ import './TabileWithCarosul.css';
 
 const TabileWithCarosul = () => {
     return (
-        <div className='row my-4'>
+        <div className='row '>
             <p className='fs-4 fw-bold mb-0'>Services Category</p>
             <p>Also we are provide another services.</p>
             <div className="col-md-6 p-3">

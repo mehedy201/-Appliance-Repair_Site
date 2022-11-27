@@ -4,6 +4,7 @@ import heroImage from '../../images/fridges/LG-refrigerator-repair.jpeg'
 import { useNavigate } from 'react-router-dom';
 import ContactDirect from './ContactDirect/ContactDirect';
 import TabileWithCarosul from './TabileWithCarosul/TabileWithCarosul';
+import WhatsappWithCall from './WhatsappWithCall/WhatsappWithCall';
 
 const Home = () => {
     // useNavigate from react hooks 
@@ -31,6 +32,8 @@ const Home = () => {
         <div className="container">
             <ContactDirect/>
             <TabileWithCarosul/>
+            {/* <p className='fs-3 fw-bold'>Will Be new Section</p> */}
+            <WhatsappWithCall/>
         </div>
         </>
     );
