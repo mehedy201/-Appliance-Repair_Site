@@ -4,6 +4,7 @@ import { Radio, Upload } from 'antd';
 import { useForm } from 'react-hook-form';
 import ContactWithMultiple from '../Sheard/ContactWithMultiple/ContactWithMultiple';
 import axios from 'axios';
+import GoogleReview from '../Sheard/GoogleReview/GoogleReview';
 // import emailjs from '@emailjs/browser'
 
 
@@ -93,6 +94,8 @@ const ContactUs = () => {
                             <p className='fw-bold fs-5'>Our reliable Central Jersey service techicians are committed to you! Satisfaction Guaranteed.</p>
                             <p className='text-center'>You can Contact with Us directly</p>
                             <ContactWithMultiple/>
+                            <p className='fs-4 for_font_family'>Leave a Review</p>
+                            <GoogleReview/>
                         </div>
                     </div>
                     <div className="col-md-6 p-4 border rounded shadow-sm">
