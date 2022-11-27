@@ -13,7 +13,7 @@ const ContactWithMultiple = () => {
 
     return (
         <div>
-            <a className='d-block fw-bold my-4 btn border p-2 hover_effect_button' href="tel:+1-877-538-5888"><FiPhoneCall className='socil_icon_webpage' /> (914) 563 2299</a>
+            <a className='d-block fw-bold my-4 btn border p-2 hover_effect_button' href="tel:+1-914-563-2299"><FiPhoneCall className='socil_icon_webpage' /> (914) 563 2299</a>
             <a className='d-block fw-bold my-4 btn border p-2 hover_effect_button' href="https://wa.link/wr7d2a" target='_blank' rel="noopener noreferrer"><ImWhatsapp className='socil_icon_webpage' /> +1 914-563-2299</a>
             <Link className='d-block fw-bold my-4 btn border p-2 hover_effect_button'  onClick={() => window.location = 'mailto:zeusfury79@gmail.com'}><MdEmail className='socil_icon_webpage' /> zeusfury79@gmail.com</Link>
             <a className='d-block fw-bold my-4 btn border p-2 hover_effect_button' href={'https://web.facebook.com/profile.php?id=100070967869502'} target={'_blank'} rel="noopener noreferrer"><FaFacebookF className='socil_icon_webpage' />Facebook</a>
