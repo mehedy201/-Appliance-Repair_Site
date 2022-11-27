@@ -5,6 +5,8 @@ import { useNavigate } from 'react-router-dom';
 import ContactDirect from './ContactDirect/ContactDirect';
 import TabileWithCarosul from './TabileWithCarosul/TabileWithCarosul';
 import WhatsappWithCall from './WhatsappWithCall/WhatsappWithCall';
+import GoogleReview from '../Sheard/GoogleReview/GoogleReview';
+import ReviewSection from './ReviewSection/ReviewSection';
 
 const Home = () => {
     // useNavigate from react hooks 
@@ -34,6 +36,9 @@ const Home = () => {
             <TabileWithCarosul/>
             {/* <p className='fs-3 fw-bold'>Will Be new Section</p> */}
             <WhatsappWithCall/>
+            <div className='bg-dark py-5 my-5'><p className='text-white text-center fs-4 fw-bold for_font_family m-0 py-4 py-md-5'>Let's revive the appliances</p></div>
+            <ReviewSection/>
+            <GoogleReview/>
         </div>
         </>
     );
