@@ -7,15 +7,15 @@ const TabileWithCarosul = () => {
             <p className='fs-4 fw-bold mb-0'>Services Category</p>
             <p>Also we are provide another services.</p>
             <div className="col-md-6 p-3">
-                <table className='table_style'>
-                    <tr className='table_row_style'><p className='fs-6 my-2'>Refrigerators</p></tr>
-                    <tr className='table_row_style'><p className='fs-6 my-2'>Washing Machines</p></tr>
-                    <tr className='table_row_style'><p className='fs-6 my-2'>Ovens</p></tr>
-                    <tr className='table_row_style'><p className='fs-6 my-2'>Dishwashers</p></tr>
-                    <tr className='table_row_style'><p className='fs-6 my-2'>Freezers</p></tr>
-                    <tr className='table_row_style'><p className='fs-6 my-2'>Dryers</p></tr>
-                    <tr className='table_row_style'><p className='fs-6 my-2'>Icemakers</p></tr>
-                </table>
+                <div className='border'>
+                    <p className='fs-6 my-0 py-2 border-bottom text-center'>Refrigerators</p>
+                    <p className='fs-6 my-0 py-2 border-bottom text-center'>Washing Machines</p>
+                    <p className='fs-6 my-0 py-2 border-bottom text-center'>Ovens</p>
+                    <p className='fs-6 my-0 py-2 border-bottom text-center'>Dishwashers</p>
+                    <p className='fs-6 my-0 py-2 border-bottom text-center'>Freezers</p>
+                    <p className='fs-6 my-0 py-2 border-bottom text-center'>Dryers</p>
+                    <p className='fs-6 my-0 py-2 text-center'>Icemakers</p>
+                </div>
             </div>
             <div className="col-md-6">
                 <p>Carosul</p>
