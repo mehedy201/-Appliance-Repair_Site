@@ -6,8 +6,11 @@ import Services from './Pages/Services/Services';
 import NavigationMenu from './Pages/Sheard/NavigaionMenu/NavigationMenu';
 import 'bootstrap/dist/css/bootstrap.css';
 import FooterSection from './Pages/Sheard/FooterSection/FooterSection';
+import TestPage from './Pages/TestPage/TestPage';
+
 
 function App() {
+
   return (
     <>
     {/* Header ------------Start ---- */}
@@ -21,6 +24,7 @@ function App() {
         <Route path='/home' element={<Home/>}></Route>
         <Route path='/services' element={<Services/>}></Route>
         <Route path='/contact-us' element={<ContactUs/>}></Route>
+        <Route path='/test-page' element={<TestPage/>}></Route>
       </Routes>
      {/* Routes --------------------------------------------------------------------------------------- End ----- */}
      {/* Footer ----------- Start ----- */}
