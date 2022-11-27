@@ -10,3 +10,9 @@
     outline: 1px solid #0073dd;
     outline-offset: 5px;
 }
+.quate_button_color{
+    background-color: #0084ff;
+}
+.quate_button_color:hover{
+    background-color: #00c3ff98;
+}

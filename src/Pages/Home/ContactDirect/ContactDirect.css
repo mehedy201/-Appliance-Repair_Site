@@ -1,0 +1,8 @@
+.socil_icon_webpage{
+    margin-right: 10px;
+    width: 25px;
+    height: auto;
+}
+.hover_effect_button:hover{
+    background: aquamarine !important;
+}
