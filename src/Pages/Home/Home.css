@@ -1,0 +1,12 @@
+.for_blur_background{
+    background-image: url('../../images/imageedit_1_5521352681\ \(1\).jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.hero_image_style{
+    width: 80%;
+    height: auto;
+    border-radius: 20px;
+    outline: 1px solid #0073dd;
+    outline-offset: 5px;
+}
