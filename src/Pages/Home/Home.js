@@ -3,6 +3,7 @@ import './Home.css'
 import heroImage from '../../images/fridges/LG-refrigerator-repair.jpeg'
 import { useNavigate } from 'react-router-dom';
 import ContactDirect from './ContactDirect/ContactDirect';
+import TabileWithCarosul from './TabileWithCarosul/TabileWithCarosul';
 
 const Home = () => {
     // useNavigate from react hooks 
@@ -29,6 +30,7 @@ const Home = () => {
         </div>
         <div className="container">
             <ContactDirect/>
+            <TabileWithCarosul/>
         </div>
         </>
     );

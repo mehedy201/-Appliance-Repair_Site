@@ -8,8 +8,8 @@ import './ContactDirect.css'
 
 const ContactDirect = () => {
     return (
-        <div className='my-4'>
-            <h1 className='fs-4 text-center mb-0'>The best home appliance repairs service in the neighborhood!</h1>
+        <div className='my-4 my-md-5'>
+            <h1 className='fs-4 fw-bold text-center mb-0'>The best home appliance repairs service in the neighborhood!</h1>
             <div className='w-50 mx-auto'><Divider className='mb-0 mt-2'/></div>
             <div className='d-flex justify-content-center'>
                 <a className=' fw-bold my-4 btn border mx-2 py-2 px-4 hover_effect_button' href="tel:+1-877-538-5888"><FiPhoneCall className='socil_icon_webpage' /> Call</a>

@@ -1,6 +1,6 @@
 import React, {  useState } from 'react';
 import './ContactUs.css'
-import { Radio, Upload } from 'antd';
+import { Divider, Radio, Upload } from 'antd';
 import { useForm } from 'react-hook-form';
 import ContactWithMultiple from '../Sheard/ContactWithMultiple/ContactWithMultiple';
 import axios from 'axios';
@@ -94,6 +94,7 @@ const ContactUs = () => {
                             <p className='fw-bold fs-5'>Our reliable Central Jersey service techicians are committed to you! Satisfaction Guaranteed.</p>
                             <p className='text-center'>You can Contact with Us directly</p>
                             <ContactWithMultiple/>
+                            <Divider/>
                             <p className='fs-4 for_font_family'>Leave a Review</p>
                             <GoogleReview/>
                         </div>

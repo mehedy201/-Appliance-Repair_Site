@@ -23,8 +23,8 @@ const NavigationMenu = () => {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
                   <div className="d-flex ms-auto">
-                    <Link className='menu_text fs-5' to={'/services'}><ImWrench className='menu_text_icon'/>Services</Link>
-                    <Link className='menu_text fs-5' to={'/contact-us'}><ImPhone className='menu_text_icon'/>Contact Us</Link>
+                    <Link className='menu_text' style={{fontSize: '18px'}} to={'/services'}><ImWrench className='menu_text_icon'/>Services</Link>
+                    <Link className='menu_text' style={{fontSize: '18px'}} to={'/contact-us'}><ImPhone className='menu_text_icon'/>Contact Us</Link>
                   </div>
                 </div>
               </div>

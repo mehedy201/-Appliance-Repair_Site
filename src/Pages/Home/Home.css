@@ -1,5 +1,5 @@
 .for_blur_background{
-    background-image: url('../../images/imageedit_1_5521352681\ \(1\).jpg');
+    background-image: url('../../images/imageedit.jpg');
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -11,8 +11,8 @@
     outline-offset: 5px;
 }
 .quate_button_color{
-    background-color: #0084ff;
+    background-color: #0084ff !important;
 }
 .quate_button_color:hover{
-    background-color: #00c3ff98;
+    background-color: #00c3ff98 !important;
 }

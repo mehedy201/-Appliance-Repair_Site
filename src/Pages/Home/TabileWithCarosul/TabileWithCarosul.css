@@ -1,0 +1,11 @@
+.table_style, .table_row_style {
+    border: 1px solid gainsboro;
+    border-collapse: collapse;
+}
+.table_style{
+    width: 100%;
+}
+.table_row_style{
+    text-align: center;
+    height: 20px;
+}
