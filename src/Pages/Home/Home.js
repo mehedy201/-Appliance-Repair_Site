@@ -8,6 +8,7 @@ import WhatsappWithCall from './WhatsappWithCall/WhatsappWithCall';
 import GoogleReview from '../Sheard/GoogleReview/GoogleReview';
 import ReviewSection from './ReviewSection/ReviewSection';
 import PastRepairSection from './PastRepairSection/PastRepairSection';
+import AppliancesAndFix from './AppliancesAndFix/AppliancesAndFix';
 
 const Home = () => {
     // useNavigate from react hooks 
@@ -36,8 +37,12 @@ const Home = () => {
             <ContactDirect/>
             <TabileWithCarosul/>
             {/* <p className='fs-3 fw-bold'>Will Be new Section</p> */}
-            <WhatsappWithCall/>
+            <WhatsappWithCall/>  
+        </div>
+        {/* Out Of container -------------------------------------------------- */}
             <div className='bg-dark py-5 my-5'><p className='text-white text-center fs-4 fw-bold for_font_family m-0 py-4 py-md-5'>Let's revive the appliances</p></div>
+        <div className='container'>
+            <AppliancesAndFix/>
             <PastRepairSection/>
             <ReviewSection/>
             <GoogleReview/>

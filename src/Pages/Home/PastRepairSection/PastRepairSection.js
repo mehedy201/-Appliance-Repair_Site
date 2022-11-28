@@ -14,7 +14,7 @@ const PastRepairSection = () => {
     return (
         <div className='row py-5 align-items-center'>
             <div className="col-md-6 px-4">
-                <p className='fs-4 fw-bold mb-0'>Past Repair Jobs</p>
+                <p className='fs-4 fw-bold mb-0'>Past Repair <span style={{color: '#0073dd'}} className=' for_font_family'>Jobs</span></p>
                 <p className='fs-6 fw-bold'>At home kitchen appliance technicians</p>
                     <Carousel 
                         responsive={responsive}
