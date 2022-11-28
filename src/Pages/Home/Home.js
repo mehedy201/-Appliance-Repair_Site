@@ -22,13 +22,13 @@ const Home = () => {
         <div className='for_blur_background'>
             <div className='container'>
                 <div className="row align-items-center">
-                    <div className="col-md-6">
+                    <div className="col-md-6 py-4 py-md-0">
                         <h2 className='for_font_family text-white'>We are fixing anything</h2>
                         <p className='text-white'>We always strive to provide the highest quality work to our customers</p>
                         <button onClick={handleQuate} className='btn quate_button_color text-white fw-bold'>Request a Quate</button>
                     </div>
-                    <div className="col-md-6 p-md-5 d-flex jstify-content-center">
-                        <img className='hero_image_style' src={heroImage} alt="LG-refrigerator-repair" />
+                    <div className="col-md-6 d-flex p-md-5 jstify-content-center">
+                        <img className='hero_image_style mx-auto m-4 m-md-0' src={heroImage} alt="LG-refrigerator-repair" />
                     </div>
                 </div>
             </div>

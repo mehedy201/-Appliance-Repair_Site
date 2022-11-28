@@ -12,8 +12,8 @@ const AppliancesAndFix = () => {
     }
     return (
         <div className='row py-5'>
-            <div className="col-md-6 d-flex justify-content-center p-3">
-                <img src={appliancesLogoImage} style={{height: '350px', width: 'auto'}} alt="" />
+            <div className="col-md-6 d-flex justify-content-center p-3 p-md-5">
+                <img src={appliancesLogoImage} style={{height: 'auto', width: '100%'}} alt="" />
             </div>
             <div className="col-md-6">
                 <p className='fs-4 fw-bold'>Let's fix the <span style={{color: '#0073dd'}} className=' for_font_family'>Washers</span> right way!</p>
@@ -21,6 +21,7 @@ const AppliancesAndFix = () => {
                         responsive={responsive}
                         autoPlay={true}
                         infinite={true}
+                        showDots={true}
                         >
                         {
                             appiancessWasharData.map(img => {

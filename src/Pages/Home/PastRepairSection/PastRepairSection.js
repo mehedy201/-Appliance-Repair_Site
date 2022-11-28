@@ -20,11 +20,12 @@ const PastRepairSection = () => {
                         responsive={responsive}
                         autoPlay={true}
                         infinite={true}
+                        showDots={true}
                         >
                         {
                             pastJobImages.map(img => {
                                 return (<div key={img.id.toString()} className='d-flex justify-content-center border p-2 rounded'>
-                                            <img className='mx-auto rounded shadow' style={{height: '350px', width: '100%'}} src={img.imageUrl} alt="" />
+                                            <img className='rounded shadow' style={{height: '350px', width: '100%'}} src={img.imageUrl} alt="" />
                                         </div>)
                                 })
                         }
