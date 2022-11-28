@@ -1,41 +1,50 @@
-import React, {  useState } from 'react';
+import React, { useState } from 'react';
 import './ContactUs.css'
 import { Divider, Radio, Upload } from 'antd';
 import { useForm } from 'react-hook-form';
 import ContactWithMultiple from '../Sheard/ContactWithMultiple/ContactWithMultiple';
-import axios from 'axios';
 import GoogleReview from '../Sheard/GoogleReview/GoogleReview';
-// import emailjs from '@emailjs/browser'
+import { ref } from 'firebase/storage';
+import { storage } from '../../firebase.init';
 
 
 
 const ContactUs = () => {
+
+
+
     // From Radio Option -----------------------------------
     const [radioValue, setRadioValue] = useState(1);
     const onChangeRedio = (e) => {
       console.log('radio checked', e.target.value);
       setRadioValue(e.target.value);
     };
+
     
     // Ant Image Upload ----------------------------------------
     const [fileList, setFileList] = useState([]);
+    const [firebaseImage, setFirebaseImage] = useState('')
     const onChange = ({ fileList: newFileList }) => {
         setFileList(newFileList);
         //`````````````````````````````````````````````
         // const formdata = new FormData();
-        //     for (let index = 0; index < fileList.length; index++) {
-        //         const file = fileList[index];
-        //         formdata.append('file', file);
-        //         console.log('uploaded file',file);
-        //     }
-        // try {
-        //     const result = await axios.post("http://localhost:5000/file", formdata);
-        //     // console.log(formdata, result);
-        // } catch (error) {
-        //     console.erroor(error);
-        // }
-        
-        console.log('Console form onchange',fileList);
+            for (let index = 0; index < fileList.length; index++) {
+                const file = fileList[index];
+                setFirebaseImage(file)
+                console.log('before',firebaseImage)
+
+                console.log(firebaseImage.type)
+                if (firebaseImage === null) {
+                    return console.log('null');
+                }else{
+                    const imageRef = ref(storage, `images/${firebaseImage.name}`);
+                    const uploadTask = imageRef.put(firebaseImage.name)
+                    uploadTask.on('state _changed', (snapshot) => {
+                        console.log(snapshot)
+                    })
+                }
+                // console.log('uploaded file',firebaseImage);
+            }
       };
 
       const onPreview = async (file) => {
@@ -43,7 +52,7 @@ const ContactUs = () => {
         if (!src) {
           src = await new Promise((resolve) => {
             const reader = new FileReader();
-            reader.readAsDataURL(file.originFileObj);
+            reader.readAsDataURL(file.name);
             reader.onload = () => resolve(reader.result);
           });
         }
@@ -58,7 +67,8 @@ const ContactUs = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = async data => {
         
-        const emailData = {...data, radioValue, fileList}
+        // const emailData = {...data, radioValue, fileList}
+        const emailData = {...data, radioValue}
         console.log(emailData)
         const res = await fetch("http://localhost:5000/register", {
             method: "POST",
@@ -122,7 +132,7 @@ const ContactUs = () => {
 
                             <p className='my-2 fw-bold'>Share a Photo</p>
                             <Upload
-                                // action="http://localhost:3000/contact-us"
+                                // action="http://localhost:3000"
                                 listType="picture-card"
                                 fileList={fileList}
                                 onChange={onChange}
@@ -130,9 +140,7 @@ const ContactUs = () => {
                                 type='file'
                                 >
                                 {fileList.length < 5 && '+ Upload'}
-                            </Upload>  
-                            {/* <input type="file" name='image' {...register("file")} /> */}
-
+                            </Upload>   
                             <p className='fw-bold fs-5'>Tell us what you need done.</p>
                             <textarea 
                                 rows="4" 

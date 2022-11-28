@@ -7,7 +7,8 @@ import NavigationMenu from './Pages/Sheard/NavigaionMenu/NavigationMenu';
 import 'bootstrap/dist/css/bootstrap.css';
 import FooterSection from './Pages/Sheard/FooterSection/FooterSection';
 import TestPage from './Pages/TestPage/TestPage';
-
+// import {storage} from './firebase.init'
+import 'react-multi-carousel/lib/styles.css';
 
 function App() {
 
