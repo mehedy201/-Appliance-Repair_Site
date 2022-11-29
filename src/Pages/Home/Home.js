@@ -10,6 +10,7 @@ import ReviewSection from './ReviewSection/ReviewSection';
 import PastRepairSection from './PastRepairSection/PastRepairSection';
 import AppliancesAndFix from './AppliancesAndFix/AppliancesAndFix';
 import StoveRepairSection from './StoveRepairSection/StoveRepairSection';
+import ProfesionalRepair from './ProfesionalRepair/ProfesionalRepair';
 
 const Home = () => {
     // useNavigate from react hooks 
@@ -44,6 +45,7 @@ const Home = () => {
             <div className='bg-dark py-5 my-5'><p className='text-white text-center fs-4 fw-bold for_font_family m-0 py-4 py-md-5'>Let's revive the appliances</p></div>
         <div className='container'>
             <AppliancesAndFix/>
+            <ProfesionalRepair/>
             <PastRepairSection/>
             <ReviewSection/>
             <GoogleReview/>
