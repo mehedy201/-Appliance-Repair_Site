@@ -5,31 +5,30 @@ import stoveRepairData from './StoveRepairData.json'
 
 const StoveRepairSection = () => {
 
-    const navigate = useNavigate();
-    const handleQuate = () => {
-        navigate('/contact-us')
-    }
-
-    // Responsive Carousel Style -----------------------------
-    const responsive = {
-        superLargeDesktop: {
-          // the naming can be any, depends on you.
-          breakpoint: { max: 4000, min: 3000 },
-          items: 3
-        },
-        desktop: {
-          breakpoint: { max: 3000, min: 1024 },
-          items: 3
-        },
-        tablet: {
-          breakpoint: { max: 1024, min: 464 },
-          items: 2
-        },
-        mobile: {
-          breakpoint: { max: 464, min: 0 },
-          items: 1
-        }
-      };
+  const navigate = useNavigate();
+  const handleQuate = () => {
+      navigate('/contact-us')
+  }
+  // Responsive Carousel Style -----------------------------
+  const responsive = {
+      superLargeDesktop: {
+        // the naming can be any, depends on you.
+        breakpoint: { max: 4000, min: 3000 },
+        items: 3
+      },
+      desktop: {
+        breakpoint: { max: 3000, min: 1024 },
+        items: 3
+      },
+      tablet: {
+        breakpoint: { max: 1024, min: 464 },
+        items: 2
+      },
+      mobile: {
+        breakpoint: { max: 464, min: 0 },
+        items: 1
+      }
+  };
     return (
         <div className='row py-5 gx-3'>
             <div className="col-md-9">
@@ -42,10 +41,12 @@ const StoveRepairSection = () => {
                     >
                     {
                         stoveRepairData.map(img => {
-                            return (<div key={img.id.toString()} className='d-flex justify-content-center p-2 rounded'>
-                                        <img className='rounded shadow' style={{height: '250px', width: '100%'}} src={img.imageUrl} alt={img.imgName} />
-                                    </div>)
-                            })
+                          return (<div key={img.id.toString()} className='d-flex justify-content-center p-2'>
+                                    <div className='rounded shadow overflow-hidden w-100'>
+                                        <img style={{height: '250px', width: '100%'}} src={img.imageUrl} alt={img.imgName} />
+                                    </div>
+                                  </div>)
+                        })
                     }
                     </Carousel>
                 </div>

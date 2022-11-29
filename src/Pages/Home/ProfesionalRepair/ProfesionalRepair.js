@@ -42,10 +42,12 @@ const ProfesionalRepair = () => {
                     >
                     {
                         profesionalRepairData.map(img => {
-                            return (<div key={img.id.toString()} className='d-flex justify-content-center p-2 rounded'>
-                                        <img className='rounded shadow' style={{height: '250px', width: '100%'}} src={img.imageUrl} alt={img.imgName} />
+                            return (<div key={img.id.toString()} className='d-flex justify-content-center p-2'>
+                                      <div className='rounded shadow overflow-hidden w-100'>
+                                          <img style={{height: '250px', width: '100%'}} src={img.imageUrl} alt={img.imgName} />
+                                      </div>
                                     </div>)
-                            })
+                        })
                     }
                     </Carousel>
                 </div>
