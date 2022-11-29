@@ -1,0 +1,15 @@
+.services_page_background{
+    background-image: url('../../images/contact_page_hero_background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+ul {
+  list-style-type: none;
+}
+ul li:before {
+  content: '\2014';
+  position: absolute;
+  color: #0073dd;
+  margin-left: -25px;
+  
+}
