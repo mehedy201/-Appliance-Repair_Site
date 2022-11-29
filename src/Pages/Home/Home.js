@@ -9,6 +9,7 @@ import GoogleReview from '../Sheard/GoogleReview/GoogleReview';
 import ReviewSection from './ReviewSection/ReviewSection';
 import PastRepairSection from './PastRepairSection/PastRepairSection';
 import AppliancesAndFix from './AppliancesAndFix/AppliancesAndFix';
+import StoveRepairSection from './StoveRepairSection/StoveRepairSection';
 
 const Home = () => {
     // useNavigate from react hooks 
@@ -36,7 +37,7 @@ const Home = () => {
         <div className="container">
             <ContactDirect/>
             <TabileWithCarosul/>
-            {/* <p className='fs-3 fw-bold'>Will Be new Section</p> */}
+            <StoveRepairSection/>
             <WhatsappWithCall/>  
         </div>
         {/* Out Of container -------------------------------------------------- */}

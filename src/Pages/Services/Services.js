@@ -10,6 +10,7 @@ import { MdLocalLaundryService } from 'react-icons/md';
 import { GiCoolSpices } from 'react-icons/gi';
 import { useNavigate } from 'react-router-dom';
 import Carousel from 'react-multi-carousel';
+import GoogleReview from '../Sheard/GoogleReview/GoogleReview';
 
 
 const Services = () => {
@@ -85,6 +86,7 @@ const Services = () => {
                         </div>
                     </div>
                 </div>
+                <GoogleReview/>
             </div>
         </>
     );

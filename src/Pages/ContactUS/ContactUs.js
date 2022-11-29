@@ -91,7 +91,7 @@ const ContactUs = () => {
 
     return (
         <>
-            <div className='contact_page_background'>
+            <div className='contact_page_background py-3'>
                 <div className="container py-5">
                     <h5 className='fs-2 for_font_family text-white'>Request a Quote</h5>
                     <p className='text-white'>By submitting your info on this form, you are agreeing to be contacted regarding your service request by means of telephone, email, or text</p>
