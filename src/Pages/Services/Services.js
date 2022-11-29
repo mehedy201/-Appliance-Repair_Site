@@ -51,14 +51,14 @@ const Services = () => {
             </div>
             <div className="container py-5">
                 <p className='fs-3 fw-bold for_font_family'>We offer comprehensive diagnostic and repair services for <span style={{color: '#0073dd'}} className=' for_font_family'>any</span> home appliance</p>
-                <ul>
-                    <li className='fs-5 fw-bold'><RiFridgeLine className='servies_icon'/>Refrigerators</li>
-                    <li className='fs-5 fw-bold'><GiWashingMachine className='servies_icon'/>Washing Machines</li>
-                    <li className='fs-5 fw-bold'><GiChickenOven className='servies_icon'/>Ovens</li>
-                    <li className='fs-5 fw-bold'><FaHandsWash className='servies_icon'/>Dishwashers</li>
-                    <li className='fs-5 fw-bold'><GiBrainFreeze className='servies_icon'/>Freezers</li>
-                    <li className='fs-5 fw-bold'><MdLocalLaundryService className='servies_icon'/>Dryers</li>
-                    <li className='fs-5 fw-bold'><GiCoolSpices className='servies_icon'/>Icemakers</li>
+                <ul className='for_decoration'>
+                    <li className='fs-5 fw-bold after_dash'><RiFridgeLine className='servies_icon'/>Refrigerators</li>
+                    <li className='fs-5 fw-bold after_dash'><GiWashingMachine className='servies_icon'/>Washing Machines</li>
+                    <li className='fs-5 fw-bold after_dash'><GiChickenOven className='servies_icon'/>Ovens</li>
+                    <li className='fs-5 fw-bold after_dash'><FaHandsWash className='servies_icon'/>Dishwashers</li>
+                    <li className='fs-5 fw-bold after_dash'><GiBrainFreeze className='servies_icon'/>Freezers</li>
+                    <li className='fs-5 fw-bold after_dash'><MdLocalLaundryService className='servies_icon'/>Dryers</li>
+                    <li className='fs-5 fw-bold after_dash'><GiCoolSpices className='servies_icon'/>Icemakers</li>
                 </ul>
                 <div className='row py-5 gx-3'>
                     <div className="col-md-9">

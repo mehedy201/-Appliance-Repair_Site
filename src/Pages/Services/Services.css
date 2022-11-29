@@ -3,10 +3,10 @@
     background-size: cover;
     background-repeat: no-repeat;
 }
-ul {
+.for_decoration {
   list-style-type: none;
 }
-ul li:before {
+.after_dash:before {
   content: '\2014';
   position: absolute;
 

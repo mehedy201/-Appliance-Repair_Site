@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import logo from '../../../images/logo/wide logo.png'
+import logo from '../../../images/wide logo.png'
 import './NaviagtionMenu.css';
 import { ImWrench } from 'react-icons/im';
 import { ImPhone } from 'react-icons/im';

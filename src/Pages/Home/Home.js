@@ -1,6 +1,6 @@
 import React from 'react';
 import './Home.css'
-import heroImage from '../../images/fridges/LG-refrigerator-repair.jpeg'
+import heroImage from '../../images/LG-refrigerator-repair.jpeg'
 import { useNavigate } from 'react-router-dom';
 import ContactDirect from './ContactDirect/ContactDirect';
 import TabileWithCarosul from './TabileWithCarosul/TabileWithCarosul';

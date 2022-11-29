@@ -9,6 +9,8 @@ import FooterSection from './Pages/Sheard/FooterSection/FooterSection';
 import TestPage from './Pages/TestPage/TestPage';
 // import {storage} from './firebase.init'
 import 'react-multi-carousel/lib/styles.css';
+import PageNotFound from './Pages/Sheard/PageNotFound/PageNotFound';
+import EmailSentSuccesfully from './Pages/Sheard/EmailSentSuccesfully/EmailSentSuccesfully';
 
 function App() {
 
@@ -26,6 +28,8 @@ function App() {
         <Route path='/services' element={<Services/>}></Route>
         <Route path='/contact-us' element={<ContactUs/>}></Route>
         <Route path='/test-page' element={<TestPage/>}></Route>
+        <Route path='/email-sent' element={<EmailSentSuccesfully/>}></Route>
+        <Route path='*' element={<PageNotFound/>}></Route>
       </Routes>
      {/* Routes --------------------------------------------------------------------------------------- End ----- */}
      {/* Footer ----------- Start ----- */}

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import footerLogo from '../../../images/logo/wide logo.png';
+import footerLogo from '../../../images/wide logo.png';
 import './FooterSection.css';
 import { FiPhoneCall } from 'react-icons/fi';
 import { ImWhatsapp } from 'react-icons/im';

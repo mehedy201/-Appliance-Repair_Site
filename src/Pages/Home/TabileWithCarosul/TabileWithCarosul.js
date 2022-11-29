@@ -16,13 +16,13 @@ const TabileWithCarosul = () => {
             <p className='fs-4 fw-bold mb-0'>Services Category</p>
             <p>Also we are provide another services.</p>
                 <div className='border'>
-                    <p className='fs-6 my-0 py-2 border-bottom text-center'>Refrigerators</p>
-                    <p className='fs-6 my-0 py-2 border-bottom text-center'>Washing Machines</p>
-                    <p className='fs-6 my-0 py-2 border-bottom text-center'>Ovens</p>
-                    <p className='fs-6 my-0 py-2 border-bottom text-center'>Dishwashers</p>
-                    <p className='fs-6 my-0 py-2 border-bottom text-center'>Freezers</p>
-                    <p className='fs-6 my-0 py-2 border-bottom text-center'>Dryers</p>
-                    <p className='fs-6 my-0 py-2 text-center'>Icemakers</p>
+                    <p className='fs-6 fw-bold my-0 py-2 border-bottom text-center'>Refrigerators</p>
+                    <p className='fs-6 fw-bold my-0 py-2 border-bottom text-center'>Washing Machines</p>
+                    <p className='fs-6 fw-bold my-0 py-2 border-bottom text-center'>Ovens</p>
+                    <p className='fs-6 fw-bold my-0 py-2 border-bottom text-center'>Dishwashers</p>
+                    <p className='fs-6 fw-bold my-0 py-2 border-bottom text-center'>Freezers</p>
+                    <p className='fs-6 fw-bold my-0 py-2 border-bottom text-center'>Dryers</p>
+                    <p className='fs-6 fw-bold my-0 py-2 text-center'>Icemakers</p>
                 </div>
             </div>
             <div className="col-md-6 py-3 px-4 px-md-5">

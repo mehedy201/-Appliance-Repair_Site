@@ -1,5 +1,5 @@
 import React from 'react';
-import googleBusinessImage from '../../../images/logo/google-my-business-logo.png'
+import googleBusinessImage from '../../../images/google-my-business-logo.png'
 
 const GoogleReview = () => {
     return (
