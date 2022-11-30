@@ -1,32 +1,45 @@
-import React, { useState } from 'react';
+import React, {  useState } from 'react';
 import './ContactUs.css'
-import { Divider, Radio, Upload } from 'antd';
+import { Radio, Upload } from 'antd';
 import { useForm } from 'react-hook-form';
 import ContactWithMultiple from '../Sheard/ContactWithMultiple/ContactWithMultiple';
-import GoogleReview from '../Sheard/GoogleReview/GoogleReview';
-import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-// import axios from 'axios';
-// import { Navigate } from 'react-router-dom';
-// import { storage } from '../../firebase.init';
-// import { ref , getDownloadURL, uploadBytesResumable} from "firebase/storage";
-// import axios from 'axios';
+// import emailjs from '@emailjs/browser'
 
 
 
 const ContactUs = () => {
-    const navigate = useNavigate()
-
     // From Radio Option -----------------------------------
     const [radioValue, setRadioValue] = useState(1);
     const onChangeRedio = (e) => {
       console.log('radio checked', e.target.value);
       setRadioValue(e.target.value);
     };
-    // Ant Image Upload input----------------------------------------
+    
+    // Ant Image Upload ----------------------------------------
     const [fileList, setFileList] = useState([]);
-    const onChange = ({ fileList: newFileList }) => {
+    const onChange = async ({ fileList: newFileList }) => {
         setFileList(newFileList);
+        //`````````````````````````````````````````````
+        // const formdata = new FormData();
+        //     for (let index = 0; index < fileList.length; index++) {
+        //         const file = fileList[index];
+        //         formdata.append('file', file);
+        //         console.log('uploaded file',file);
+        //     }
+        // try {
+        //     const result = await axios.post("http://localhost:5000/file", formdata);
+        //     // console.log(formdata, result);
+        // } catch (error) {
+        //     console.erroor(error);
+        // }
+
+
+
+
+
+        
+        // console.log('Console form onchange',fileList);
       };
 
       const onPreview = async (file) => {
@@ -34,7 +47,7 @@ const ContactUs = () => {
         if (!src) {
           src = await new Promise((resolve) => {
             const reader = new FileReader();
-            reader.readAsDataURL(file.name);
+            reader.readAsDataURL(file.originFileObj);
             reader.onload = () => resolve(reader.result);
           });
         }
@@ -45,52 +58,50 @@ const ContactUs = () => {
         // console.log(file);
       };
 
-    const { register, handleSubmit, reset, formState: {error} } = useForm();
-    const onSubmit = data =>{
-
-
-        // Sent Email Data Server ----------------------
+    // React Hooks Form HandleSubmit ------------------------
+    const { register, handleSubmit, formState: { errors } } = useForm();
+    const onSubmit = async data => {
+        
         const emailData = {...data, radioValue, fileList}
-        fetch('http://localhost:5000/register',{
-            method: 'POST',
+        console.log(emailData)
+        const res = await fetch("http://localhost:5000/register", {
+            method: "POST",
             headers: {
-                'content-type': 'application/json'
+                "Content-Type": "application/json"
             },
-            body: JSON.stringify(emailData)
+            body: JSON.stringify({emailData})
         })
-        .then(res => res.json())
-        .then(data => {
-            if(data.success){
-                reset();
-                setFileList([])
-                setRadioValue(null)
-                navigate('/email-sent')
-            }
-        })
-    };
 
+        const newData = await res.json();
+        console.log(newData);
+
+        // Send Data For Image Upload -------------------
+        
+        
+
+
+
+
+        
+    };
     
-    
+
+
+
 
     return (
         <>
-            <div className='contact_page_background py-3'>
+            <div className='contact_page_background'>
                 <div className="container py-5">
                     <h5 className='fs-2 for_font_family text-white'>Request a Quote</h5>
                     <p className='text-white'>By submitting your info on this form, you are agreeing to be contacted regarding your service request by means of telephone, email, or text</p>
                 </div>
             </div>
             <div className='container my-5'>
-                <div className="row gx-4">
-                    <div className="col-md-6">
-                        <div className=' p-md-5 p-3 md-bg-light'>
-                            <p className='fw-bold fs-5'>Our reliable Central Jersey service techicians are committed to you! Satisfaction Guaranteed.</p>
-                            <p className='text-center'>You can Contact with Us directly</p>
-                            <ContactWithMultiple/>
-                            <Divider/>
-                            <p className='fs-4 for_font_family'>Leave a Review</p>
-                            <GoogleReview/>
-                        </div>
+                <div className="row">
+                    <div className="col-md-6 p-4">
+                        <p className='fw-bold fs-4'>Our reliable Central Jersey service techicians are committed to you! Satisfaction Guaranteed.</p>
+                        <ContactWithMultiple/>
                     </div>
                     <div className="col-md-6 p-4 border rounded shadow-sm">
                         <p className='for_font_family fs-4 text-center mb-0'>Get In Touch</p>
@@ -115,16 +126,17 @@ const ContactUs = () => {
 
                             <p className='my-2 fw-bold'>Share a Photo</p>
                             <Upload
-                                // action="http://localhost:3000"
+                                action="http://localhost:3000/contact-us"
                                 listType="picture-card"
                                 fileList={fileList}
                                 onChange={onChange}
                                 onPreview={onPreview}
                                 type='file'
-                                multiple={true}
                                 >
                                 {fileList.length < 5 && '+ Upload'}
-                            </Upload>   
+                            </Upload>  
+                            {/* <input type="file" name='image' {...register("file")} /> */}
+
                             <p className='fw-bold fs-5'>Tell us what you need done.</p>
                             <textarea 
                                 rows="4" 

@@ -11,6 +11,8 @@ import TestPage from './Pages/TestPage/TestPage';
 import 'react-multi-carousel/lib/styles.css';
 import PageNotFound from './Pages/Sheard/PageNotFound/PageNotFound';
 import EmailSentSuccesfully from './Pages/Sheard/EmailSentSuccesfully/EmailSentSuccesfully';
+import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+
 
 function App() {
 
