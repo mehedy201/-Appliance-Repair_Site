@@ -17,6 +17,7 @@ const NavigationMenu = () => {
     return (
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
               <div className="container">
+
                     <img onClick={logoClick} className='website_logo' src={logo} alt="Appliance Repair 101" />
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                   <span className="navbar-toggler-icon"></span>
