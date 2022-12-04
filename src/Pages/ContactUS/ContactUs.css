@@ -24,3 +24,22 @@
 .contact_form_text_area:focus{
     outline: 1px solid rgb(0, 183, 255);
 }
+
+.file_upload_input[type=file]::file-selector-button {
+    margin-right: 15px;
+    border: 1px solid gainsboro;
+    padding: 7px 20px;
+    background-color: transparent;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px  gainsboro;
+    position: relative
+}
+.file_upload_icon{
+    color: rgb(0, 255, 0);
+}
+
+.mehedi{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+}

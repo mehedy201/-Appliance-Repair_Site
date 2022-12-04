@@ -1,17 +1,13 @@
 import React, { useState } from 'react';
 import './ContactUs.css'
-import { Divider, Radio, Upload } from 'antd';
+import { Divider, Radio } from 'antd';
 import { useForm } from 'react-hook-form';
 import ContactWithMultiple from '../Sheard/ContactWithMultiple/ContactWithMultiple';
 import GoogleReview from '../Sheard/GoogleReview/GoogleReview';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
-// import axios from 'axios';
-// import { Navigate } from 'react-router-dom';
-// import { storage } from '../../firebase.init';
-// import { ref , getDownloadURL, uploadBytesResumable} from "firebase/storage";
-// import axios from 'axios';
-
+import { storage } from '../../firebase.init';
+import { ref , getDownloadURL, uploadBytesResumable} from "firebase/storage";
+import { MdOutlineCloudDone } from 'react-icons/md';
 
 
 const ContactUs = () => {
@@ -23,53 +19,70 @@ const ContactUs = () => {
       console.log('radio checked', e.target.value);
       setRadioValue(e.target.value);
     };
-    // Ant Image Upload input----------------------------------------
-    const [fileList, setFileList] = useState([]);
-    const onChange = ({ fileList: newFileList }) => {
-        setFileList(newFileList);
-      };
-
-      const onPreview = async (file) => {
-        let src = file.url;
-        if (!src) {
-          src = await new Promise((resolve) => {
-            const reader = new FileReader();
-            reader.readAsDataURL(file.name);
-            reader.onload = () => resolve(reader.result);
-          });
+    
+    // const [file, setFile] = useState('')
+    const [inputUpload, setInputUpload] = useState('')
+    const [imgUrl, setImgUrl] = useState([]);
+ 
+    // Handle upload OnChange---------------------------------
+    const handleUpload = async (file) => {
+        setInputUpload([]);
+        console.log(file)
+        try {
+                var imageUrl = [];
+                for (let i = 0; i < file.length; i++) {
+                    const imgName = file[i].name + Date.now();
+                    const storageRef = ref(storage, `/contat/${imgName}`);
+                    const uploadTask = await uploadBytesResumable(storageRef, file[i]);
+                    const url = await getDownloadURL(uploadTask.ref);
+                    imageUrl.push({src: url});
+                    setImgUrl(imageUrl)
+                    console.log(imgUrl)
+                
+                    console.log(imageUrl);
+                    for (let i = 0; i < imageUrl.length; i++) {
+                        const element = imageUrl[i];
+                        setInputUpload(element)
+                        console.log('inputUpload', element)
+                    }
+                console.log('imageUpload')
+            }
+            
+        } catch (error) {
+            console.log(error)
         }
-        const image = new Image();
-        image.src = src;
-        const imgWindow = window.open(src);
-        imgWindow?.document.write(image.outerHTML);
-        // console.log(file);
-      };
+    }
 
     const { register, handleSubmit, reset, formState: {error} } = useForm();
-    const onSubmit = data =>{
+    const onSubmit = async data =>{
 
-
+        if(error){
+            alert('Error', error)
+        }else{
         // Sent Email Data Server ----------------------
-        const emailData = {...data, radioValue, fileList}
-        fetch('http://localhost:5000/register',{
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(emailData)
-        })
-        .then(res => res.json())
-        .then(data => {
-            if(data.success){
-                reset();
-                setFileList([])
-                setRadioValue(null)
-                navigate('/email-sent')
-            }
-        })
+        
+            const emailData = {...data, radioValue, imgUrl}
+            fetch('http://localhost:5000/register',{
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(emailData)
+            })
+            .then(res => res.json())
+            .then(data => {
+                if(data.success){
+                    console.log('data', data)
+                    reset();
+                    setRadioValue(null)
+                    navigate('/email-sent')
+                }
+                if(data.error){
+                    alert('Email Not Sent')
+                }
+            })
+        }
     };
-
-    
     
 
     return (
@@ -114,17 +127,21 @@ const ContactUs = () => {
                                 {...register("zipCode")} />
 
                             <p className='my-2 fw-bold'>Share a Photo</p>
-                            <Upload
-                                // action="http://localhost:3000"
-                                listType="picture-card"
-                                fileList={fileList}
-                                onChange={onChange}
-                                onPreview={onPreview}
-                                type='file'
-                                multiple={true}
-                                >
-                                {fileList.length < 5 && '+ Upload'}
-                            </Upload>   
+                            <div className='d-flex justify-content-between align-items-center mb-4'>
+                                <input
+                                    type="file"
+                                    id='imgUpload'
+                                    className='file_upload_input'
+                                    onChange={(e) => handleUpload(e.target.files)}
+                                    multiple
+                                    required
+                                />
+                            {
+                               inputUpload.src && <MdOutlineCloudDone className="file_upload_icon"/>
+                            }
+
+                            </div> 
+
                             <p className='fw-bold fs-5'>Tell us what you need done.</p>
                             <textarea 
                                 rows="4" 
@@ -142,6 +159,7 @@ const ContactUs = () => {
                     </div>
                 </div>
             </div>
+            <script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>  
         </>
     );
 };
