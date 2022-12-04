@@ -6,12 +6,9 @@ import Services from './Pages/Services/Services';
 import NavigationMenu from './Pages/Sheard/NavigaionMenu/NavigationMenu';
 import 'bootstrap/dist/css/bootstrap.css';
 import FooterSection from './Pages/Sheard/FooterSection/FooterSection';
-import TestPage from './Pages/TestPage/TestPage';
-// import {storage} from './firebase.init'
 import 'react-multi-carousel/lib/styles.css';
 import PageNotFound from './Pages/Sheard/PageNotFound/PageNotFound';
 import EmailSentSuccesfully from './Pages/Sheard/EmailSentSuccesfully/EmailSentSuccesfully';
-// import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 
 
 function App() {
@@ -29,7 +26,6 @@ function App() {
         <Route path='/home' element={<Home/>}></Route>
         <Route path='/services' element={<Services/>}></Route>
         <Route path='/contact-us' element={<ContactUs/>}></Route>
-        <Route path='/test-page' element={<TestPage/>}></Route>
         <Route path='/email-sent' element={<EmailSentSuccesfully/>}></Route>
         <Route path='*' element={<PageNotFound/>}></Route>
       </Routes>
